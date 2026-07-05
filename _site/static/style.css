@@ -1,0 +1,500 @@
+/* Core styling */
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --link-border: #ccc;
+  --link-hover-border: #333;
+  --nav-hidden-color: #fff;
+  --footer-color: #ccc;
+  --gallery-bg: rgba(0, 0, 0, 0.8);
+  --gallery-text: #fff;
+  --card-border: #ddd;
+  --card-hover-border: #999;
+  --card-hover-bg: #fafafa;
+  --card-text: #555;
+  --back-link: #888;
+  --back-link-hover: #333;
+  --theme-toggle-color: #999;
+  --meta-text: #999;
+  --desc-text: #555;
+}
+
+.dark-theme {
+  --bg-color: #111;
+  --text-color: #eee;
+  --link-border: #444;
+  --link-hover-border: #eee;
+  --nav-hidden-color: #111;
+  --footer-color: #555;
+  --gallery-bg: rgba(255, 255, 255, 0.9);
+  --gallery-text: #000;
+  --card-border: #333;
+  --card-hover-border: #666;
+  --card-hover-bg: #1a1a1a;
+  --card-text: #aaa;
+  --back-link: #777;
+  --back-link-hover: #eee;
+  --theme-toggle-color: #666;
+  --meta-text: #999;
+  --desc-text: #ccc;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: var(--bg-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* Header */
+header {
+  margin-bottom: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header p {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Links */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--link-border);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--link-hover-border);
+}
+
+.home-link {
+  font-weight: bold;
+  border: none;
+}
+
+.home-link:hover {
+  border: none;
+  color: var(--text-color);
+}
+
+/* Main layout */
+main {
+  display: flex;
+  gap: 4em;
+}
+
+/* Navigation */
+nav {
+  flex-shrink: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin-bottom: 0.8em;
+}
+
+nav a {
+  border-bottom: none;
+}
+
+nav a:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+nav .active a {
+  border-bottom: 1px solid var(--text-color);
+}
+
+nav .nav-hidden a {
+  color: var(--nav-hidden-color);
+  border-bottom: none;
+  position: relative;
+}
+
+nav .nav-hidden a:hover {
+  color: var(--nav-hidden-color);
+  border-bottom: none;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.social-links a {
+  color: var(--meta-text);
+  border-bottom: none !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links a:hover {
+  color: var(--text-color);
+  transform: translateY(-2px);
+  border-bottom: none !important;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  margin-top: 1.5em;
+}
+
+.theme-toggle-top {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--theme-toggle-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle-top:hover {
+  color: var(--text-color);
+  transform: scale(1.1);
+}
+
+.moon-icon { display: none; }
+.sun-icon { display: block; }
+
+.dark-theme .moon-icon { display: block; }
+.dark-theme .sun-icon { display: none; }
+
+/* Content section */
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.content p:first-child {
+  margin-top: 0;
+}
+
+/* ASCII molecule container */
+#ascii-container {
+  overflow: hidden;
+}
+
+#ascii-container table {
+  margin: 0;
+  border-collapse: collapse;
+}
+
+/* Gears canvas */
+#gears-container {
+  width: 100%;
+  position: relative;
+}
+
+#gears-canvas {
+  display: block;
+  width: 100%;
+  touch-action: pan-x; /* allow horizontal scroll, capture vertical swipes for gear shifting */
+}
+
+
+/* Paragraphs */
+p {
+  margin: 1em 0;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: var(--footer-color);
+}
+
+/* Responsive - stack on mobile */
+@media (max-width: 600px) {
+  body {
+    margin: 20px auto;
+  }
+
+  main {
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+
+/* Gallery */
+.gallery {
+  margin-top: 2em;
+  display: flex;
+  gap: 1em;
+  align-items: flex-start;
+}
+
+.gallery-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.gallery-item {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.gallery-item a {
+  display: block;
+  border-bottom: none;
+}
+
+
+
+/* Bio Header */
+.bio-header {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.bio-header img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 600px) {
+  .bio-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5em;
+  }
+}
+
+/* Intuition Explainer UI */
+.explainer-container {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin-top: 1em;
+}
+
+.explainer-input-group {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+#explainer-input {
+  flex-grow: 1;
+  padding: 0.8em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+}
+
+#explainer-submit {
+  padding: 0.8em 1.5em;
+  background: var(--text-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+#explainer-submit:hover {
+  opacity: 0.8;
+}
+
+#explainer-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.explainer-status {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-bottom: 1em;
+  font-family: var(--font-mono);
+}
+
+.explainer-output {
+  min-height: 50px;
+  padding: 1em;
+  background: var(--bg-color);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+
+.gallery-item figcaption {
+  position: absolute;
+  inset: 0;
+  background: var(--gallery-bg);
+  color: var(--gallery-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.gallery-item figcaption > span {
+  display: block;
+  text-align: center;
+}
+
+.gallery-item figcaption a {
+  color: inherit;
+  pointer-events: auto;
+}
+
+.gallery-item:hover figcaption,
+.gallery-item:focus-within figcaption {
+  opacity: 1;
+}
+
+.gallery-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    flex-direction: column;
+  }
+}
+
+/* Touch devices: hover doesn't exist, so show captions below the image */
+@media (hover: none) {
+  .gallery-item figcaption {
+    position: static;
+    background: transparent;
+    color: inherit;
+    opacity: 1;
+    padding: 0.5em 0 0 0;
+    text-align: left;
+    font-size: 0.85em;
+  }
+}
+
+/* Theses — choose-your-own-adventure chooser */
+.thesis-chooser {
+  margin-top: 1em;
+}
+
+.thesis-chooser > p:first-child {
+  color: var(--card-text);
+  margin-bottom: 1em;
+}
+
+.thesis-card {
+  display: block;
+  padding: 1.2em 1.4em;
+  margin-bottom: 1em;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.thesis-card:hover {
+  border-color: var(--card-hover-border);
+  background: var(--card-hover-bg);
+}
+
+.thesis-card h3 {
+  margin: 0 0 0.4em 0;
+  font-size: 1.1em;
+}
+
+.thesis-card p {
+  margin: 0;
+  color: var(--card-text);
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.thesis-section {
+  display: none;
+}
+
+.thesis-section:target {
+  display: block;
+}
+
+body:has(.thesis-section:target) .thesis-chooser {
+  display: none;
+}
+
+.thesis-back {
+  font-size: 0.9em;
+  margin: 0 0 1.5em 0;
+}
+
+.thesis-back a {
+  color: var(--back-link);
+  border-bottom: none;
+}
+
+.thesis-back a:hover {
+  color: var(--back-link-hover);
+}
+
+/* Blog Posts */
+.post-meta {
+  color: var(--meta-text);
+  font-size: 0.9em;
+}
+
+.post-desc {
+  color: var(--desc-text);
+  font-size: 0.95em;
+}
+
+.post-backlink {
+  font-size: 0.9em;
+}

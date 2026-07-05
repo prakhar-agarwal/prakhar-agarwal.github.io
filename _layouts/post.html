@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<article class="blog-post">
+  <h1>{{ page.title }}</h1>
+  <p class="post-meta" style="margin-top:-0.5em;">{{ page.date | date: "%B %-d, %Y" }}</p>
+  {{ content }}
+</article>
+
+<p class="post-backlink" style="margin-top:2em;"><a href="{{ site.baseurl }}/blog/">&larr; Back to all posts</a></p>

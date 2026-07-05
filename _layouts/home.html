@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }}</title>
+  <link rel="icon" href="{{ site.baseurl }}/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ site.baseurl }}/static/style.css">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ31H96XPX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WZ31H96XPX');
+  </script>
+</head>
+<body>
+  <header>
+    <p>{{ site.title }}</p>
+    {% include theme-toggle.html %}
+  </header>
+  <main>
+    {% include nav.html %}
+
+    <section class="content">
+      {{ content }}
+    </section>
+  </main>
+  
+  <footer>&copy; {{ site.title }}. All rights reserved.</footer>
+  <script src="{{ site.baseurl }}/static/theme-toggle.js"></script>
+</body>
+</html>

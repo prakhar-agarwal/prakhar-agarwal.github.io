@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World - Prakhar Agarwal</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ31H96XPX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WZ31H96XPX');
+  </script>
+
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark-theme');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/" class="home-link">Prakhar Agarwal</a>
+    <button id="theme-toggle-btn" class="theme-toggle-top" aria-label="Toggle Dark Mode" title="Toggle Dark Mode">
+  <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+  </svg>
+  <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+</button>
+
+  </header>
+
+  <main>
+    <nav>
+  <ul>
+    <li><a href="/#media">News & Media</a></li>
+  </ul>
+  
+  <div class="social-links">
+    <a href="https://x.com/prakhar5050" target="_blank" aria-label="Twitter">
+      <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/prakharagarwal251/" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a href="https://www.instagram.com/prakharagarwal2511/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+    <a href="https://scholar.google.com/citations?user=9VqK-2YAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+      <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+    </a>
+  </div>
+</nav>
+
+
+    <section class="content">
+      <article class="blog-post">
+  <h1>Hello World</h1>
+  <p class="post-meta" style="margin-top:-0.5em;">July 2, 2026</p>
+  <p>This is a sample blog post. You can write in <strong>Markdown</strong> and Jekyll will render it to HTML.</p>
+
+<h2 id="how-to-add-new-posts">How to add new posts</h2>
+
+<ol>
+  <li>Create a new file in <code class="language-plaintext highlighter-rouge">_posts/</code> with the format <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code></li>
+  <li>Add front matter at the top:</li>
+</ol>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Your</span><span class="nv"> </span><span class="s">Post</span><span class="nv"> </span><span class="s">Title"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2026-07-02</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">A</span><span class="nv"> </span><span class="s">short</span><span class="nv"> </span><span class="s">description</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">listing</span><span class="nv"> </span><span class="s">page."</span>
+<span class="na">nav</span><span class="pi">:</span> <span class="s">blog</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Write your content in Markdown below the front matter.</li>
+  <li>Push to GitHub and it builds automatically.</li>
+</ol>
+
+<h2 id="features-you-get-for-free">Features you get for free</h2>
+
+<ul>
+  <li><strong>Markdown rendering</strong> — write naturally, no HTML needed</li>
+  <li><strong>Code blocks</strong> with syntax highlighting</li>
+  <li><strong>Auto-listing</strong> on the blog index page</li>
+  <li><strong>Dates and permalinks</strong> handled by Jekyll</li>
+</ul>
+
+<p>That’s it. Happy writing.</p>
+
+</article>
+
+<p class="post-backlink" style="margin-top:2em;"><a href="/blog/">&larr; Back to all posts</a></p>
+
+    </section>
+  </main>
+
+  
+
+  <footer>&copy; Prakhar Agarwal. All rights reserved.</footer>
+  <script src="/static/theme-toggle.js"></script>
+  <script src="/static/particles.js"></script>
+</body>
+</html>

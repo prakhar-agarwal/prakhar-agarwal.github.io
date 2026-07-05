@@ -1,0 +1,13 @@
+title: Prakhar Agarwal
+description: Personal website of Prakhar Agarwal
+url: "https://prakharagarwal.xyz"
+baseurl: ""
+
+markdown: kramdown
+permalink: /blog/:title/
+
+# Exclude files from the build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
